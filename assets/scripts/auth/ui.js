@@ -21,9 +21,21 @@ const signInFailure = (error) => {
   console.error(error)
 }
 
+const changePasswordSuccess = (response) => {
+  console.log(response)
+  console.log('password successfully changed')
+}
+
+const changePasswordFailure = (error) => {
+  console.log(error)
+  console.log('It was an error')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInFailure,
-  signInSuccess
+  signInSuccess,
+  changePasswordSuccess,
+  changePasswordFailure
 }
