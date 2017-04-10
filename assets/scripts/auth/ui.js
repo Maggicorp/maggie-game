@@ -11,7 +11,19 @@ const signUpFailure = (error) => {
   console.error(error)
 }
 
+const signInSuccess = (response) => {
+  console.log(response)
+  console.log('You did it!')
+  store.user = response.user
+}
+
+const signInFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
-  signUpFailure
+  signUpFailure,
+  signInFailure,
+  signInSuccess
 }

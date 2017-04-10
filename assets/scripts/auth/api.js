@@ -12,6 +12,16 @@ const signUp = (data) => {
   })
 }
 
+const signIn = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    data
+  })
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn
 }

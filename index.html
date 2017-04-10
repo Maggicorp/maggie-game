@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic Tac Toe draggable=""</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic Tac Toe draggable=""</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Tic Tac Toe Game </h1>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <form id="sign-up">
-            <fieldset>
-              <legend>Sign up!</legend>
-              <input type="text" name="credentials[email]" placeholder="email"><br>
-              <input type="password" name="credentials[password]" placeholder="password"><br>
-              <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
-              <input type="submit" name="submit" value="Sign up!">
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-            </fieldset>
-          </form>
+<body class="container-fluid">
+  <h1>Tic Tac Toe Game </h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-      est laborum.</p>
-    </body>
+  <form id="sign-up">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <input type="text" name="credentials[email]" placeholder="email"><br>
+      <input type="password" name="credentials[password]" placeholder="password"><br>
+      <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
+      <input type="submit" name="submit" value="Sign up!">
+
+    </fieldset>
+  </form>
+
+  <form id="sign-in">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input type="text" name="credentials[email]" placeholder="email">
+      <input type="password" name="credentials[password]" placeholder="password">
+      <input type="submit" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing est laborum.</p>
+</body>
+
 </html>
