@@ -31,11 +31,22 @@ const changePasswordFailure = (error) => {
   console.log('It was an error')
 }
 
+const signOutSuccess = () => {
+  console.log('You did it!')
+  store.user = null
+}
+
+const signOutFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInFailure,
   signInSuccess,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
