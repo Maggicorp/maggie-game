@@ -107,6 +107,7 @@ const onNewGame = function (event) {
     gameArray[i] = ''
   }
   clearBoard()
+  gameOver = false
 }
 
 const addBoardHandlers = () => {
