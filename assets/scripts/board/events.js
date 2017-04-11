@@ -3,10 +3,14 @@
 //const api = require('./api')
 //const ui = require('./ui')
 
+const gameArray = ['', '', '', '', '', '', '', '', '']
+
 const onBoardClick = function(event) {
   event.preventDefault()
   console.log('click')
-  console.log(event.target)
+  const box = event.target
+  const idNum = $(box).attr('data-id')
+  console.log(idNum)
 }
 
 const addBoardHandlers = () => {
