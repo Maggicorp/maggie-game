@@ -17,8 +17,11 @@ const authEvents = require('./auth/events.js')
 
 const boardEvents = require('./board/events.js')
 
+const gameEvents = require('./gameAPI/events.js')
+
 // On document ready
 $(() => {
   authEvents.addHandlers()
   boardEvents.addBoardHandlers()
+  gameEvents.addGameHandlers()
 })

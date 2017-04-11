@@ -16,7 +16,7 @@ const signInSuccess = (response) => {
   console.log(response)
   $('.instruction-box').text('You did it! Now you can play!')
   store.user = response.user
-  $('.game_section').css('display', 'block')
+//  $('.game_section').css('display', 'block')
 }
 
 const signInFailure = (error) => {
