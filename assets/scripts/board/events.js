@@ -8,18 +8,7 @@ const isFree = (idNum, arr) => {
   }
 }
 
-// let turn = 1
-
-// const whoseTurn = function (turn) {
-//   console.log('turn is ', turn)
-//   if (turn % 2 === 1) {
-//     console.log('x turn')
-//     turn++
-//   } else if (turn % 2 === 0) {
-//     console.log('o turn')
-//     turn++
-//   }
-// }
+const turn = [1]
 
 const playX = function (ind, arr, obj) {
   arr[ind] = 'x'
@@ -27,7 +16,13 @@ const playX = function (ind, arr, obj) {
   $(obj).attr('background-color', 'blue')
 }
 
-const gameArray = ['1', '', '', '', '', '', '', '', '']
+const playO = function (ind, arr, obj) {
+  arr[ind] = 'o'
+  console.log(arr)
+  $(obj).attr('background-color', 'blue')
+}
+
+const gameArray = ['', '', '', '', '', '', '', '', '']
 
 const onBoardClick = function (event) {
   event.preventDefault()
@@ -41,8 +36,15 @@ const onBoardClick = function (event) {
     return false
   } else {
     console.log('spot vacant')
-  //  whoseTurn(turn)
-    playX(idNum, gameArray, box)
+    if (turn[0] % 2 === 1) {
+      console.log('x turn')
+      turn[0]++
+      playX(idNum, gameArray, box)
+    } else if (turn[0] % 2 === 0) {
+      console.log('o turn')
+      turn[0]++
+      playO(idNum, gameArray, box)
+    }
   }
 }
 
