@@ -15,7 +15,9 @@ require('./example')
 
 const authEvents = require('./auth/events.js')
 
+const boardEvents = require('./board/events.js')
 // On document ready
 $(() => {
   authEvents.addHandlers()
+  boardEvents.addBoardHandlers()
 })
