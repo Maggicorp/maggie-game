@@ -14,9 +14,11 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (response) => {
   console.log(response)
-  $('.instruction-box').text('You did it! Now you can play!')
+  $('.instruction-box').text('You did it! Now you can play! You must click create game to start a new game. ')
   store.user = response.user
-//  $('.game_section').css('display', 'block')
+  $('.sign-out').css('display', 'block')
+  $('.create-game').css('display', 'block')
+  $('.change-password').css('display', 'block')
 }
 
 const signInFailure = (error) => {
