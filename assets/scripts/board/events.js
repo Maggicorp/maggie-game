@@ -48,8 +48,13 @@ const whoWon = function (arr) {
     console.log(arr[2], 'wins!')
     stopGame()
     return
+  } else if (turn[0] === 10) {
+    console.log('tie')
+    stopGame()
+    return
   } else {
     console.log('Play on')
+    console.log(turn, 'turn')
     return
   }
 }
