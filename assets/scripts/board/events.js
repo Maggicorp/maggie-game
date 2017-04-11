@@ -10,17 +10,17 @@ const isFree = (idNum, arr) => {
 
 const turn = [1]
 
-const playX = function (ind, arr, obj) {
-  arr[ind] = 'x'
-  console.log(arr)
-  $(obj).attr('background-color', 'blue')
-}
-
-const playO = function (ind, arr, obj) {
-  arr[ind] = 'o'
-  console.log(arr)
-  $(obj).attr('background-color', 'blue')
-}
+// const playX = function (ind, arr, obj) {
+//   arr[ind] = 'x'
+//   console.log(arr)
+//   $(obj).innerHTML(<h1>X</h1>)
+// }
+//
+// const playO = function (ind, arr, obj) {
+//   arr[ind] = 'o'
+//   console.log(arr)
+//   $(obj).innerHTML(<h1>O</h1>)
+// }
 
 const gameArray = ['', '', '', '', '', '', '', '', '']
 
@@ -39,11 +39,11 @@ const onBoardClick = function (event) {
     if (turn[0] % 2 === 1) {
       console.log('x turn')
       turn[0]++
-      playX(idNum, gameArray, box)
+      // playX(idNum, gameArray, box)
     } else if (turn[0] % 2 === 0) {
       console.log('o turn')
       turn[0]++
-      playO(idNum, gameArray, box)
+//      playO(idNum, gameArray, box)
     }
   }
 }
