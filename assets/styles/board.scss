@@ -6,6 +6,9 @@ div.board_section {
 }
 div.board_square {
 	margin: 0 auto;
+  text-align: center;
+  font-family: monospace;
+  font-size: 60px;
 	width: 100px;
 	height: 100px;
 	background-color: crimson;

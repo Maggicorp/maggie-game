@@ -8,6 +8,12 @@ const isFree = (idNum, arr) => {
   }
 }
 
+const whoWon = function (arr) {
+  if (arr[0] === arr[1] && arr[0] === arr[2]) {
+    console.log(arr[0], 'wins!')
+  }
+}
+
 const turn = [1]
 
 const playX = function (ind, arr, obj) {
@@ -16,10 +22,10 @@ const playX = function (ind, arr, obj) {
   $(obj).text('X')
 }
 
- const playO = function (ind, arr, obj) {
-   arr[ind] = 'o'
-   console.log(arr)
-   $(obj).text('o')
+const playO = function (ind, arr, obj) {
+  arr[ind] = 'o'
+  console.log(arr)
+  $(obj).text('O')
  }
 
 const gameArray = ['', '', '', '', '', '', '', '', '']
@@ -46,6 +52,7 @@ const onBoardClick = function (event) {
       playO(idNum, gameArray, box)
     }
   }
+  whoWon(gameArray)
 }
 
 const addBoardHandlers = () => {
