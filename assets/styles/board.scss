@@ -1,0 +1,28 @@
+
+div.board_section {
+  background-color: blue;
+  width: 300px;
+  height: 300px;
+}
+div.board_square {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	background-color: crimson;
+	margin-top: 0;
+	float: left;
+	border: gray 2px solid;
+}
+div.board_square:hover {
+	background-color: #821516}
+
+  button {
+  	background-color: blueviolet;
+  	border-radius: 70px;
+  	border: inset 2px gray;
+  	height: 30px;
+  	color: yellow;
+  	font-family: 'Press Start 2P', cursive;
+  	font-size: 12px;
+  	margin-top: 10px;
+  }
