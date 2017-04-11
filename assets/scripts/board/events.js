@@ -105,8 +105,7 @@ const onBoardClick = function (event) {
   console.log('reach here?!?')
 }
 
-const onNewGame = function (event) {
-  event.preventDefault()
+const onNewGame = function () {
   $('.messages').text('Play again!')
   for (let i = 0; i < 9; i++) {
     gameArray[i] = ''
@@ -114,13 +113,32 @@ const onNewGame = function (event) {
   clearBoard()
   gameOver = false
   turn[0] = 1
+
 }
 
 const addBoardHandlers = () => {
   $('.board_square').on('click', onBoardClick)
-  $('.new_game').on('click', onNewGame)
+//  $('.new_game').on('click', onNewGame)
+}
+
+const storeGameApi = require('../storeGameApi.js')
+
+const newGameSuccess = (response) => {
+  console.log(response)
+  $('.instruction-box').text('You did it! Now you can play!')
+  storeGameApi.user = response.user
+  onNewGame()
+  $('.game_section').css('display', 'block')
+}
+
+const newGameFailure = (error) => {
+  console.error(error)
+  $('.instruction-box').text('Something went wrong, try again')
 }
 
 module.exports = {
-  addBoardHandlers
+  addBoardHandlers,
+  onNewGame,
+  newGameSuccess,
+  newGameFailure
 }
