@@ -17,10 +17,8 @@ const authEvents = require('./auth/events.js')
 
 const boardEvents = require('./board/events.js')
 
-const restart = require('./restart/events.js')
 // On document ready
 $(() => {
   authEvents.addHandlers()
   boardEvents.addBoardHandlers()
-  restart.addNewGame()
 })
