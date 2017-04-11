@@ -8,8 +8,11 @@ const isFree = (idNum, arr) => {
   }
 }
 
+let gameOver = false
+
 const stopGame = function () {
   console.log('game is over')
+  gameOver = true
 }
 
 const whoWon = function (arr) {
@@ -74,8 +77,8 @@ const onBoardClick = function (event) {
   const idNum = $(box).attr('data-id')
   console.log(idNum)
   const freeSpot = (isFree(idNum, gameArray))
-  if (!freeSpot) {
-    console.log('spot taken')
+  if (!freeSpot || gameOver) {
+    console.log('spot taken or game is over')
     return false
   } else {
     console.log('spot vacant')
