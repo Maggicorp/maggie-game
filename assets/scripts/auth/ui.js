@@ -4,40 +4,46 @@ const store = require('../store.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
-  console.log('You did it!')
+  $('.instruction-box').text('Great Job! Now sign up!')
 }
 
 const signUpFailure = (error) => {
   console.error(error)
+  $('.instruction-box').text('Something went wrong, try again')
 }
 
 const signInSuccess = (response) => {
   console.log(response)
-  console.log('You did it!')
+  $('.instruction-box').text('You did it! Now you can play!')
   store.user = response.user
+  $('.game_section').css('display', 'block')
 }
 
 const signInFailure = (error) => {
   console.error(error)
+  $('.instruction-box').text('Something went wrong, try again')
 }
 
 const changePasswordSuccess = (response) => {
   console.log(response)
-  console.log('password successfully changed')
+  $('.instruction-box').text('password successfully changed')
 }
 
 const changePasswordFailure = (error) => {
   console.log(error)
   console.log('It was an error')
+  $('.instruction-box').text('Something went wrong, try again')
 }
 
 const signOutSuccess = () => {
-  console.log('You did it!')
+  $('.instruction-box').text('Goodbye')
   store.user = null
+  $('.game_section').css('display', 'none')
 }
 
 const signOutFailure = (error) => {
   console.error(error)
+  $('.instruction-box').text('Something went wrong, try again')
 }
 
 module.exports = {
