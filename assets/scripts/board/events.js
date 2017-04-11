@@ -11,49 +11,49 @@ const isFree = (idNum, arr) => {
 let gameOver = false
 
 const stopGame = function () {
-  console.log('game is over')
+  console.log('Game is over')
   gameOver = true
 }
 
 const whoWon = function (arr) {
   if (arr[0] === arr[1] && arr[0] === arr[2] && arr[0] !== '') {
-    console.log(arr[0], 'wins!')
+    $('.messages').text(arr[0] + ' wins!')
     stopGame()
     return
   } else if (arr[3] === arr[4] && arr[3] === arr[5] && arr[3] !== '') {
-    console.log(arr[3], 'wins!')
+    $('.messages').text(arr[3] + ' wins!')
     stopGame()
     return
   } else if (arr[6] === arr[7] && arr[6] === arr[8] && arr[8] !== '') {
-    console.log(arr[6], 'wins!')
+    $('.messages').text(arr[6] + ' wins!')
     stopGame()
     return
   } if (arr[0] === arr[3] && arr[0] === arr[6] && arr[6] !== '') {
-    console.log(arr[0], 'wins!')
+    $('.messages').text(arr[0] + ' wins!')
     stopGame()
     return
   } else if (arr[1] === arr[4] && arr[1] === arr[7] && arr[7] !== '') {
-    console.log(arr[1], 'wins!')
+    $('.messages').text(arr[1] + ' wins!')
     stopGame()
     return
   } else if (arr[2] === arr[5] && arr[2] === arr[8] && arr[8] !== '') {
-    console.log(arr[2], 'wins!')
+    $('.messages').text(arr[2] + ' wins!')
     stopGame()
     return
   } else if (arr[0] === arr[4] && arr[0] === arr[8] && arr[8] !== '') {
-    console.log(arr[0], 'wins!')
+    $('.messages').text(arr[0] + ' wins!')
     stopGame()
     return
   } else if (arr[2] === arr[4] && arr[2] === arr[6] && arr[6] !== '') {
-    console.log(arr[2], 'wins!')
+    $('.messages').text(arr[2] + ' wins!')
     stopGame()
     return
   } else if (turn[0] === 10) {
-    console.log('tie')
+    $('.messages').text('It is a tie!')
     stopGame()
     return
   } else {
-    console.log('Play on')
+    $('.messages').text('Play on')
     console.log(turn, 'turn')
     return
   }
@@ -107,12 +107,13 @@ const onBoardClick = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
-  console.log('new game button clicked')
+  $('.messages').text('Play again!')
   for (let i = 0; i < 9; i++) {
     gameArray[i] = ''
   }
   clearBoard()
   gameOver = false
+  turn[0] = 1
 }
 
 const addBoardHandlers = () => {
