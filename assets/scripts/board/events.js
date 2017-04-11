@@ -1,16 +1,22 @@
 'use strict'
 
-//const api = require('./api')
-//const ui = require('./ui')
+const isFree = (idNum, arr) => {
+  if (arr[idNum] === '') {
+    return true
+  } else {
+    return false
+  }
+}
 
 const gameArray = ['', '', '', '', '', '', '', '', '']
 
-const onBoardClick = function(event) {
+const onBoardClick = function (event) {
   event.preventDefault()
   console.log('click')
   const box = event.target
   const idNum = $(box).attr('data-id')
   console.log(idNum)
+  console.log(isFree(idNum, gameArray))
 }
 
 const addBoardHandlers = () => {
