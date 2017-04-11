@@ -62,6 +62,10 @@ const playX = function (ind, arr, obj) {
   $(obj).text('X')
 }
 
+const clearBoard = function () {
+  $('.board_square').text('')
+}
+
 const playO = function (ind, arr, obj) {
   arr[ind] = 'o'
   console.log(arr)
@@ -96,8 +100,18 @@ const onBoardClick = function (event) {
   console.log('reach here?!?')
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  console.log('new game button clicked')
+  for (let i = 0; i < 9; i++) {
+    gameArray[i] = ''
+  }
+  clearBoard()
+}
+
 const addBoardHandlers = () => {
   $('.board_square').on('click', onBoardClick)
+  $('.new_game').on('click', onNewGame)
 }
 
 module.exports = {
