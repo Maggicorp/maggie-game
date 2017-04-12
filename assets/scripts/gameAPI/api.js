@@ -15,7 +15,7 @@ const createNew = () => {
   })
 }
 
-const updateGame = (index, value) => {
+const updateGame = (index, value, isOver) => {
   console.log('runs update')
   console.log(store)
   console.log(store.game.id)
@@ -31,7 +31,8 @@ const updateGame = (index, value) => {
         'cell': {
           'index': index,
           'value': value
-        }
+        },
+        'over': isOver
       }
     }
   })

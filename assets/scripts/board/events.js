@@ -106,9 +106,9 @@ const whoWon = function (arr) {
 const api = require('../gameAPI/api.js')
 const ui = require('../gameAPI/ui.js')
 
-const updateGame = function (index, value) {
+const updateGame = function (index, value, gameOver) {
   console.log('updateGame function')
-  api.updateGame(index, value)
+  api.updateGame(index, value, gameOver)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
 }
@@ -161,7 +161,7 @@ const onBoardClick = function (event) {
   }
   whoWon(gameArray)
   console.log('win array', winsArray)
-  updateGame(idNum, val)
+  updateGame(idNum, val, gameOver)
 }
 
 const onNewGame = function () {
