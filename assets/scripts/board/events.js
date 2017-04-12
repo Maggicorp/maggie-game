@@ -162,6 +162,9 @@ const onBoardClick = function (event) {
   whoWon(gameArray)
   console.log('win array', winsArray)
   updateGame(idNum, val, gameOver)
+  $('#x-wins').text(winsArray[0])
+  $('#o-wins').text(winsArray[1])
+  $('#tie').text(winsArray[2])
 }
 
 const onNewGame = function () {
@@ -198,5 +201,6 @@ module.exports = {
   addBoardHandlers,
   onNewGame,
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  winsArray
 }

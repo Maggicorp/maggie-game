@@ -3,13 +3,10 @@
 const store = require('../store.js')
 
 const updateGameSuccess = (response) => {
-  console.log('response: ', response)
-  console.log('response.game: ', response.game)
   store.game = response.game
 }
 
 const updateGameFailure = () => {
-  console.error('somethng went wrong')
 }
 
 const getGameSuccess = (response) => {
@@ -18,16 +15,15 @@ const getGameSuccess = (response) => {
 }
 
 const getGameFailure = () => {
-  console.log('did not work')
+  $('#display-all-games').text('error')
 }
 
 const oneGameSuccess = (response) => {
-  console.log('response', response)
   $('#display-one-game').text(JSON.stringify(response))
 }
 
 const oneGameFailure = () => {
-  console.log('did not work')
+  $('#display-one-game').text('Error, make sure to enter a valid game id')
 }
 
 module.exports = {

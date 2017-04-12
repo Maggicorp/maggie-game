@@ -2,6 +2,8 @@
 
 const store = require('../store.js')
 
+const winsArray = require('../board/events.js')
+
 const signUpSuccess = (data) => {
   console.log(data)
   $('.instruction-box').text('Great Job! Now sign up!')
@@ -48,6 +50,9 @@ const signOutSuccess = () => {
   $('.sign-out').css('display', 'none')
   $('.create-game').css('display', 'none')
   $('.change-password').css('display', 'none')
+  for (let i = 0; i < winsArray.length; i++) {
+    winsArray[i] = ''
+  }
 }
 
 const signOutFailure = (error) => {
