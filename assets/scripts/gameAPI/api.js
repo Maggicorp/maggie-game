@@ -15,17 +15,25 @@ const createNew = () => {
   })
 }
 
-const updateGame = () => {
+const updateGame = (index, value) => {
   console.log('runs update')
   console.log(store)
   console.log(store.game.id)
+  console.log(store.game)
   return $.ajax({
     url: config.apiOrigin + '/games/ ' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {}
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value
+        }
+      }
+    }
   })
 }
 

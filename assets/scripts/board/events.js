@@ -106,11 +106,11 @@ const whoWon = function (arr) {
 const api = require('../gameAPI/api.js')
 const ui = require('../gameAPI/ui.js')
 
-const updateGame = function () {
+const updateGame = function (index, value) {
   console.log('updateGame function')
-  api.updateGame()
-    .then(ui.updateSuccess)
-    .catch(ui.updateFailure)
+  api.updateGame(index, value)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
 }
 
 const turn = [1]
@@ -141,6 +141,7 @@ const onBoardClick = function (event) {
   const idNum = $(box).attr('data-id')
   console.log(idNum)
   const freeSpot = (isFree(idNum, gameArray))
+  let val = ''
   if (!freeSpot || gameOver) {
     console.log('spot taken or game is over')
     return false
@@ -148,17 +149,19 @@ const onBoardClick = function (event) {
     console.log('spot vacant')
     if (turn[0] % 2 === 1) {
       console.log('x turn')
+      val = 'x'
       turn[0]++
       playX(idNum, gameArray, box)
     } else if (turn[0] % 2 === 0) {
       console.log('o turn')
+      val = 'o'
       turn[0]++
       playO(idNum, gameArray, box)
     }
   }
   whoWon(gameArray)
   console.log('win array', winsArray)
-  updateGame()
+  updateGame(idNum, val)
 }
 
 const onNewGame = function () {
