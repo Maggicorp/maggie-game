@@ -12,7 +12,18 @@ const updateGameFailure = () => {
   console.error('somethng went wrong')
 }
 
+const getGameSuccess = (response) => {
+  console.log('response: ', response)
+  $('#display-all-games').text(JSON.stringify(response))
+}
+
+const getGameFailure = () => {
+  console.log('did not work')
+}
+
 module.exports = {
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  getGameSuccess,
+  getGameFailure
 }

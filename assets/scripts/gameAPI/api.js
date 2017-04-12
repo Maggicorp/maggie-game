@@ -15,6 +15,16 @@ const createNew = () => {
   })
 }
 
+const getAllGames = () => {
+  console.log('runsCreateNew')
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token }
+  })
+}
+
 const updateGame = (index, value, isOver) => {
   console.log('runs update')
   console.log(store)
@@ -40,5 +50,6 @@ const updateGame = (index, value, isOver) => {
 
 module.exports = {
   createNew,
-  updateGame
+  updateGame,
+  getAllGames
 }
