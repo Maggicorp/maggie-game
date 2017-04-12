@@ -120,7 +120,6 @@ const onNewGame = function () {
   clearBoard()
   gameOver = false
   turn[0] = 1
-
 }
 
 const addBoardHandlers = () => {

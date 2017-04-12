@@ -41,6 +41,9 @@ const signOutSuccess = () => {
   $('.instruction-box').text('Goodbye')
   store.user = null
   $('.game_section').css('display', 'none')
+  $('.sign-out').css('display', 'none')
+  $('.create-game').css('display', 'none')
+  $('.change-password').css('display', 'none')
 }
 
 const signOutFailure = (error) => {
