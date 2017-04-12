@@ -8,6 +8,12 @@ const isFree = (idNum, arr) => {
   }
 }
 
+const winsArray = [0, 0, 0]
+
+ // winsArray[0] = x wins
+// winsArray[1] = o wins
+// winsArray[2] = ties
+
 let gameOver = false
 
 const stopGame = function () {
@@ -50,6 +56,7 @@ const whoWon = function (arr) {
     return
   } else if (turn[0] === 10) {
     $('.messages').text('It is a tie!')
+    winsArray[2]++
     stopGame()
     return
   } else {

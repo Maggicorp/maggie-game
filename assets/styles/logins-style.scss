@@ -1,6 +1,14 @@
 header {
   text-align: center;
   text-shadow: 1px 1px 5px yellow;
+  background-image: url('../styles/media/robotsFightingBanner.png');
+  height: 150px;
+  & h1 {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    background-color: rgba(white, 0.6)
+  }
 }
 
 .change-password {
