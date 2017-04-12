@@ -19,6 +19,9 @@ const signInSuccess = (response) => {
   $('.sign-out').css('display', 'block')
   $('.create-game').css('display', 'block')
   $('.change-password').css('display', 'block')
+  $('.display-all-games').css('display', 'block')
+  $('.get-all-games').css('display', 'block')
+  $('.get-one-game').css('display', 'block')
 }
 
 const signInFailure = (error) => {
