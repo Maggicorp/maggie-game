@@ -48,8 +48,19 @@ const updateGame = (index, value, isOver) => {
   })
 }
 
+const getOneGame = (data) => {
+  console.log('get one Game')
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + data.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token }
+  })
+}
+
 module.exports = {
   createNew,
   updateGame,
-  getAllGames
+  getAllGames,
+  getOneGame
 }

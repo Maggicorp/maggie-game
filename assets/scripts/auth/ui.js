@@ -20,6 +20,7 @@ const signInSuccess = (response) => {
   $('.create-game').css('display', 'block')
   $('.change-password').css('display', 'block')
   $('.display-all-games').css('display', 'block')
+  $('.display-one-game').css('display', 'block')
   $('.get-all-games').css('display', 'block')
   $('.get-one-game').css('display', 'block')
 }

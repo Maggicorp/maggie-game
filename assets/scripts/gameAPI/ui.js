@@ -21,9 +21,20 @@ const getGameFailure = () => {
   console.log('did not work')
 }
 
+const oneGameSuccess = (response) => {
+  console.log('response', response)
+  $('#display-one-game').text(JSON.stringify(response))
+}
+
+const oneGameFailure = () => {
+  console.log('did not work')
+}
+
 module.exports = {
   updateGameSuccess,
   updateGameFailure,
   getGameSuccess,
-  getGameFailure
+  getGameFailure,
+  oneGameSuccess,
+  oneGameFailure
 }
