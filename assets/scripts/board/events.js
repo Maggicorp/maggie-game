@@ -8,7 +8,14 @@ const isFree = (idNum, arr) => {
   }
 }
 
+// need a way to restart it on sign out
 const winsArray = [0, 0, 0]
+
+// if (arr[x] === 'x'){
+//   winsArray[0]++
+// } else if (arr[0] === 'x'){
+//   winsArray[1]++
+// }
 
  // winsArray[0] = x wins
 // winsArray[1] = o wins
@@ -24,34 +31,74 @@ const stopGame = function () {
 const whoWon = function (arr) {
   if (arr[0] === arr[1] && arr[0] === arr[2] && arr[0] !== '') {
     $('.messages').text(arr[0] + ' wins!')
+    if (arr[0] === 'x') {
+      winsArray[0]++
+    } else if (arr[0] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } else if (arr[3] === arr[4] && arr[3] === arr[5] && arr[3] !== '') {
     $('.messages').text(arr[3] + ' wins!')
+    if (arr[3] === 'x') {
+      winsArray[0]++
+    } else if (arr[3] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } else if (arr[6] === arr[7] && arr[6] === arr[8] && arr[8] !== '') {
     $('.messages').text(arr[6] + ' wins!')
+    if (arr[6] === 'x') {
+      winsArray[0]++
+    } else if (arr[6] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } if (arr[0] === arr[3] && arr[0] === arr[6] && arr[6] !== '') {
     $('.messages').text(arr[0] + ' wins!')
+    if (arr[0] === 'x') {
+      winsArray[0]++
+    } else if (arr[0] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } else if (arr[1] === arr[4] && arr[1] === arr[7] && arr[7] !== '') {
     $('.messages').text(arr[1] + ' wins!')
+    if (arr[1] === 'x') {
+      winsArray[0]++
+    } else if (arr[1] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } else if (arr[2] === arr[5] && arr[2] === arr[8] && arr[8] !== '') {
     $('.messages').text(arr[2] + ' wins!')
     stopGame()
+    if (arr[2] === 'x') {
+      winsArray[0]++
+    } else if (arr[2] === 'o') {
+      winsArray[1]++
+    }
     return
   } else if (arr[0] === arr[4] && arr[0] === arr[8] && arr[8] !== '') {
     $('.messages').text(arr[0] + ' wins!')
+    if (arr[0] === 'x') {
+      winsArray[0]++
+    } else if (arr[0] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } else if (arr[2] === arr[4] && arr[2] === arr[6] && arr[6] !== '') {
     $('.messages').text(arr[2] + ' wins!')
+    if (arr[2] === 'x') {
+      winsArray[0]++
+    } else if (arr[2] === 'o') {
+      winsArray[1]++
+    }
     stopGame()
     return
   } else if (turn[0] === 10) {
@@ -109,7 +156,7 @@ const onBoardClick = function (event) {
     }
   }
   whoWon(gameArray)
-  console.log('reach here?!?')
+  console.log('win array', winsArray)
 }
 
 const onNewGame = function () {
