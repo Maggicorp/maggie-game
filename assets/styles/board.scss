@@ -1,3 +1,7 @@
+body {
+  font-family: monospace;
+}
+
 div.game_section {
   background-color: gray;
   padding-bottom: 50px;
@@ -24,14 +28,3 @@ div.board_square {
 }
 div.board_square:hover {
 	background-color: #821516}
-
-  button {
-  	background-color: blueviolet;
-  	border-radius: 70px;
-  	border: inset 2px gray;
-  	height: 30px;
-  	color: yellow;
-  	font-family: 'Press Start 2P', cursive;
-  	font-size: 12px;
-  	margin-top: 10px;
-  }

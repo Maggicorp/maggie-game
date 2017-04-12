@@ -1,4 +1,4 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -16,19 +16,18 @@ s<!DOCTYPE html>
 <body class="container-fluid">
 <header>  <h1>Tic Tac Toe Game </h1> </header>
 <div class='instruction-box'> You must sign up and sign in before you can play! </div>
-
-  <form id="sign-up">
+<div class="row">
+  <form id="sign-up" class="col-sm-6 col-xs-12">
     <fieldset>
       <legend>Sign up!</legend>
       <input type="text" name="credentials[email]" placeholder="email"><br>
       <input type="password" name="credentials[password]" placeholder="password"><br>
       <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
       <input type="submit" name="submit" value="Sign up!">
-
     </fieldset>
   </form>
-  <br>
-  <form id="sign-in">
+
+  <form id="sign-in" class="col-sm-6 col-xs-12">
     <fieldset>
       <legend>Sign in!</legend>
       <input type="text" name="credentials[email]" placeholder="email">
@@ -36,8 +35,10 @@ s<!DOCTYPE html>
       <input type="submit" name="submit" value="Sign in!">
     </fieldset>
   </form>
-  <br>
-  <form id="change-password" class="change-password">
+</div>
+
+<div class="row">
+  <form id="change-password" class="change-password col-sm-4 col-xs-12">
     <fieldset>
       <legend>Change Password</legend>
       <input type="password" name="passwords[old]" placeholder="old password">
@@ -45,23 +46,24 @@ s<!DOCTYPE html>
       <input type="submit" name="submit" value="change-password">
     </fieldset>
   </form>
-  <br>
-  <form id="sign-out" class="sign-out">
+
+  <form id="sign-out" class="sign-out col-sm-4 col-xs-12">
     <fieldset>
       <legend>Sign Out</legend>
       <input type="submit" name="submit" value="sign-out">
     </fieldset>
   </form>
-<br>
-<form id="create-game" class="create-game">
+
+<form id="create-game" class="create-game col-sm-4 col-xs-12">
   <fieldset>
     <legend>Create Game</legend>
     <input type="submit" name="submit" value="create-game">
   </fieldset>
 </form>
-<br>
+
+</div>
+
 <div class="game_section">
-<!-- <button class="new_game">New Game</button> -->
 <br>
 <div class='messages'>
 Let's Play!
