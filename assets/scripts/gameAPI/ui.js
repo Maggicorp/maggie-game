@@ -1,18 +1,18 @@
+// don't use this file,
+
 // 'use strict'
 //
-// const storeGameApi = require('../storeGameApi.js')
-//
-// const onNewGame = require('../board/events.js')
+// const store = require('../store.js')
 //
 // const newGameSuccess = (response) => {
-//   console.log(response)
+//   console.log('response: ', response)
+//   console.log('response.game: ', response.game)
 //   $('.instruction-box').text('You did it! Now you can play!')
-//   storeGameApi.user = response.user
-//   onNewGame
+//   store.game = response.game
 // }
 //
-// const newGameFailure = (error) => {
-//   console.error(error)
+// const newGameFailure = () => {
+//   console.error()
 //   $('.instruction-box').text('Something went wrong, try again')
 // }
 //

@@ -1,14 +1,14 @@
 'use strict'
 
 const api = require('./api')
-const ui = require('../board/events.js')
+const board = require('../board/events.js')
 
 const onCreateGame = function () {
   event.preventDefault()
   console.log('click works')
   api.createNew()
-    .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure)
+    .then(board.newGameSuccess)
+    .catch(board.newGameFailure)
 }
 
 const addGameHandlers = () => {

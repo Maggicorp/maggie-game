@@ -11,16 +11,6 @@ const isFree = (idNum, arr) => {
 // need a way to restart it on sign out
 const winsArray = [0, 0, 0]
 
-// if (arr[x] === 'x'){
-//   winsArray[0]++
-// } else if (arr[0] === 'x'){
-//   winsArray[1]++
-// }
-
- // winsArray[0] = x wins
-// winsArray[1] = o wins
-// winsArray[2] = ties
-
 let gameOver = false
 
 const stopGame = function () {
@@ -113,7 +103,18 @@ const whoWon = function (arr) {
   }
 }
 
+const api = require('../gameAPI/api.js')
+const ui = require('../gameAPI/ui.js')
+
+const updateGame = function () {
+  console.log('updateGame function')
+  api.updateGame()
+    .then(ui.updateSuccess)
+    .catch(ui.updateFailure)
+}
+
 const turn = [1]
+// playX includes logging to create event
 
 const playX = function (ind, arr, obj) {
   arr[ind] = 'x'
@@ -157,6 +158,7 @@ const onBoardClick = function (event) {
   }
   whoWon(gameArray)
   console.log('win array', winsArray)
+  updateGame()
 }
 
 const onNewGame = function () {
@@ -174,12 +176,12 @@ const addBoardHandlers = () => {
 //  $('.new_game').on('click', onNewGame)
 }
 
-const storeGameApi = require('../storeGameApi.js')
+const store = require('../store.js')
 
 const newGameSuccess = (response) => {
   console.log(response)
   $('.instruction-box').text('You did it! Now you can play!')
-  storeGameApi.user = response.user
+  store.game = response.game
   onNewGame()
   $('.game_section').css('display', 'block')
 }
