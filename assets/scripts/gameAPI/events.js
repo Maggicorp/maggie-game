@@ -7,7 +7,6 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const onCreateGame = function () {
   event.preventDefault()
-  console.log('click works')
   api.createNew()
     .then(board.newGameSuccess)
     .catch(board.newGameFailure)
@@ -15,7 +14,6 @@ const onCreateGame = function () {
 
 const onGetAllGames = function () {
   event.preventDefault()
-  console.log('Get all games works')
   api.getAllGames()
     .then(ui.getGameSuccess)
     .catch(ui.getGameFailure)
@@ -23,7 +21,6 @@ const onGetAllGames = function () {
 
 const onGetOneGame = function (event) {
   event.preventDefault()
-  console.log('Get one game clicked')
   const data = getFormFields(this)
   api.getOneGame(data)
     .then(ui.oneGameSuccess)

@@ -4,7 +4,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const createNew = () => {
-  console.log('runsCreateNew')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
@@ -16,7 +15,6 @@ const createNew = () => {
 }
 
 const getAllGames = () => {
-  console.log('runsCreateNew')
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'GET',
@@ -26,10 +24,6 @@ const getAllGames = () => {
 }
 
 const updateGame = (index, value, isOver) => {
-  console.log('runs update')
-  console.log(store)
-  console.log(store.game.id)
-  console.log(store.game)
   return $.ajax({
     url: config.apiOrigin + '/games/ ' + store.game.id,
     method: 'PATCH',
@@ -49,7 +43,6 @@ const updateGame = (index, value, isOver) => {
 }
 
 const getOneGame = (data) => {
-  console.log('get one Game')
   return $.ajax({
     url: config.apiOrigin + '/games/' + data.game.id,
     method: 'GET',
