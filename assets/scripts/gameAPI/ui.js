@@ -18,7 +18,7 @@ const printGames = (data) => {
 
 const getGameSuccess = (response) => {
   if (response.games.length === 0) {
-    $('#display-all-games').text('You did not play any games!?! Play some games first')
+    $('#display-all-games').text('You did not play any games!?! Play some games first.  To start a new game click the create game button.')
   } else {
     $('#display-all-games').text('Hello ' + response.games[0].player_x.email + '! \r\n You played ' + response.games.length + ' games.  Here they are: \r\n' + printGames(response))
   }
@@ -32,7 +32,7 @@ const oneGameSuccess = (response) => {
 }
 
 const oneGameFailure = () => {
-  $('#display-one-game').text('Error, make sure to enter a valid game id')
+  $('#display-one-game').text('Something went wrong. Please make sure to enter a valid game id.  Click on get all games to find a list of all the games you have played. ')
 }
 
 const gameOutcome = function (data) {

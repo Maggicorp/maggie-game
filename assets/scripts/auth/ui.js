@@ -6,7 +6,7 @@ const winsArray = require('../board/events.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
-  $('.instruction-box').text('Great Job! Now sign up!')
+  $('.instruction-box').text('Great Job! Now sign in!')
 }
 
 const signUpFailure = (error) => {
@@ -18,6 +18,8 @@ const signInSuccess = (response) => {
   console.log(response)
   $('.instruction-box').text('You did it! Now you can play! You must click create game to start a new game. ')
   store.user = response.user
+  $('#display-all-games').text('')
+  $('#display-one-game').text('')
   $('.sign-out').css('display', 'block')
   $('.create-game').css('display', 'block')
   $('.change-password').css('display', 'block')
@@ -25,6 +27,8 @@ const signInSuccess = (response) => {
   $('.display-one-game').css('display', 'block')
   $('.get-all-games').css('display', 'block')
   $('.get-one-game').css('display', 'block')
+  $('#sign-in').css('display', 'none')
+  $('#sign-up').css('display', 'none')
 }
 
 const signInFailure = (error) => {
@@ -46,10 +50,17 @@ const changePasswordFailure = (error) => {
 const signOutSuccess = () => {
   $('.instruction-box').text('Goodbye')
   store.user = null
+  store.games = null
   $('.game_section').css('display', 'none')
   $('.sign-out').css('display', 'none')
   $('.create-game').css('display', 'none')
   $('.change-password').css('display', 'none')
+  $('.display-all-games').css('display', 'none')
+  $('.display-one-game').css('display', 'none')
+  $('.get-all-games').css('display', 'none')
+  $('.get-one-game').css('display', 'none')
+  $('#sign-in').css('display', 'block')
+  $('#sign-up').css('display', 'block')
   for (let i = 0; i < winsArray.length; i++) {
     winsArray[i] = ''
   }

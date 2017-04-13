@@ -118,7 +118,6 @@ const turn = [1]
 
 const playX = function (ind, arr, obj) {
   arr[ind] = 'x'
-  console.log(arr)
   $(obj).text('X')
 }
 
@@ -128,7 +127,6 @@ const clearBoard = function () {
 
 const playO = function (ind, arr, obj) {
   arr[ind] = 'o'
-  console.log(arr)
   $(obj).text('O')
 }
 

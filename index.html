@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<div class="container-fluid">
+<div class="container">
 <header>  <h1>Tic Tac Toebot </h1>
 <div class='instruction-box'> You must sign up and sign in before you can play! </div>
 </header>
@@ -22,7 +22,7 @@
   <form id="sign-up" class="col-sm-6 col-xs-12">
     <fieldset>
       <legend>Sign up!</legend>
-      <input type="text" name="credentials[email]" placeholder="email"><br>
+      <input type="text" name="credentials[email]" placeholder="username"><br>
       <input type="password" name="credentials[password]" placeholder="password"><br>
       <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
       <input type="submit" name="submit" value="Sign up!">
@@ -32,7 +32,7 @@
   <form id="sign-in" class="col-sm-6 col-xs-12">
     <fieldset>
       <legend>Sign in!</legend>
-      <input type="text" name="credentials[email]" placeholder="email">
+      <input type="text" name="credentials[email]" placeholder="username">
       <input type="password" name="credentials[password]" placeholder="password">
       <input type="submit" name="submit" value="Sign in!">
     </fieldset>
@@ -117,7 +117,6 @@ Let's Play!
 <div id="display-one-game" class="display-one-game">
 </div>
 </div>
-</body>
 </body>
 
 </html>
