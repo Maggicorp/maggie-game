@@ -20,9 +20,10 @@ const getGameSuccess = (response) => {
   if (response.games.length === 0) {
     $('#display-all-games').text('You did not play any games!?! Play some games first.  To start a new game click the create game button.')
   } else {
-    $('#display-all-games').text('Hello ' + response.games[0].player_x.email + '! \r\n You played ' + response.games.length + ' games.  Here they are: \r\n' + printGames(response))
+    $('#display-all-games').text('Hello ' + response.games[0].player_x.email + '! \r\n You played ' + response.games.length + ' games.  You won ' + didXwin(response) + ' games.  Here are all the games: \r\n' + printGames(response))
   }
 }
+
 const getGameFailure = () => {
   $('#display-all-games').text('error')
 }
@@ -90,6 +91,52 @@ const gameOutcome = function (data) {
       return 'It is a tie!'
     }
   }
+}
+
+const didXwin = function (data) {
+  console.log(data.games)
+  console.log(data.games[0].cells)
+  const result = ['0']
+  for (let i = 0; i < data.games.length; i++) {
+    const arr = data.games[i].cells
+    console.log(arr)
+    if (data.games[i].over === false) {
+      console.log(false)
+    } else if (arr[0] === arr[1] && arr[0] === arr[2] && arr[0] !== '') {
+      if (arr[0] === 'x') {
+        result[0]++
+      }
+    } else if (arr[3] === arr[4] && arr[3] === arr[5] && arr[3] !== '') {
+      if (arr[3] === 'x') {
+        result[0]++
+      }
+    } else if (arr[6] === arr[7] && arr[6] === arr[8] && arr[8] !== '') {
+      if (arr[6] === 'x') {
+        result[0]++
+      }
+    } else if (arr[0] === arr[3] && arr[0] === arr[6] && arr[6] !== '') {
+      if (arr[0] === 'x') {
+        result[0]++
+      }
+    } else if (arr[1] === arr[4] && arr[1] === arr[7] && arr[7] !== '') {
+      if (arr[1] === 'x') {
+        result[0]++
+      }
+    } else if (arr[2] === arr[5] && arr[2] === arr[8] && arr[8] !== '') {
+      if (arr[2] === 'x') {
+        result[0]++
+      }
+    } else if (arr[0] === arr[4] && arr[0] === arr[8] && arr[8] !== '') {
+      if (arr[0] === 'x') {
+        result[0]++
+      }
+    } else if (arr[2] === arr[4] && arr[2] === arr[6] && arr[6] !== '') {
+      if (arr[2] === 'x') {
+        result[0]++
+      }
+    }
+  }
+  return result[0]
 }
 
 module.exports = {
