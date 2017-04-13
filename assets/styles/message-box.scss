@@ -1,4 +1,4 @@
-div.messages {
+.messages {
   background-color: white;
   text-align: center;
   margin: 0 auto;
@@ -9,6 +9,13 @@ div.messages {
   text-shadow: 1px 1px 3px yellow;
   font-size: 16px;
   border: 2px solid black;
+}
+
+@media (max-width: 400px) {
+  .messages .display-all-games .display-one-game .instruction-box{
+    width: 90%;
+    color: red;
+  }
 }
 
 .display-all-games {
