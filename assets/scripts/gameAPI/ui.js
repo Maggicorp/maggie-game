@@ -29,7 +29,7 @@ const getGameFailure = () => {
 }
 
 const oneGameSuccess = (response) => {
-  $('#display-one-game').text('This game was completed is ' + response.game.over + '.\r\n The game moves looked like ' + response.game.cells + ' The outcome of the game was ' + gameOutcome(response))
+  $('#display-one-game').text('This game was completed is ' + response.game.over + '.\r\n The game moves looked like ' + response.game.cells + '. The outcome of the game was ' + gameOutcome(response) + '!!!')
 }
 
 const oneGameFailure = () => {
@@ -39,7 +39,7 @@ const oneGameFailure = () => {
 const gameOutcome = function (data) {
   const arr = data.game.cells
   if (data.game.over === false) {
-    return 'inconclusive.  Finish your game next time. '
+    return 'inconclusive.  Finish your game next time'
   } else {
     if (arr[0] === arr[1] && arr[0] === arr[2] && arr[0] !== '') {
       if (arr[0] === 'x') {
@@ -88,7 +88,7 @@ const gameOutcome = function (data) {
         return 'o won'
       }
     } else {
-      return 'It is a tie!'
+      return 'a tie'
     }
   }
 }

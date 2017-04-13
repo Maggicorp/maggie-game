@@ -14,6 +14,12 @@ let gameOver = false
 
 const stopGame = function () {
   $('.board_square').css('background-color', 'blue')
+  $('.board_square').mouseover(function () {
+    $(this).css('background-color', '#003366')
+  })
+  $('.board_square').mouseout(function () {
+    $(this).css('background-color', 'blue')
+  })
   gameOver = true
 }
 
@@ -45,7 +51,8 @@ const whoWon = function (arr) {
     }
     stopGame()
     return
-  } if (arr[0] === arr[3] && arr[0] === arr[6] && arr[6] !== '') {
+  }
+  if (arr[0] === arr[3] && arr[0] === arr[6] && arr[6] !== '') {
     $('.messages').text(arr[0] + ' wins!')
     if (arr[0] === 'x') {
       winsArray[0]++
@@ -128,7 +135,7 @@ const playO = function (ind, arr, obj) {
 
 const gameArray = ['', '', '', '', '', '', '', '', '']
 
-const onBoardClick = function (event) {
+const onBoardClick = function(event) {
   event.preventDefault()
   const box = event.target
   const idNum = $(box).attr('data-id')
@@ -140,11 +147,11 @@ const onBoardClick = function (event) {
     if (turn[0] % 2 === 1) {
       val = 'x'
       turn[0]++
-      playX(idNum, gameArray, box)
+        playX(idNum, gameArray, box)
     } else if (turn[0] % 2 === 0) {
       val = 'o'
       turn[0]++
-      playO(idNum, gameArray, box)
+        playO(idNum, gameArray, box)
     }
   }
   whoWon(gameArray)
@@ -154,7 +161,7 @@ const onBoardClick = function (event) {
   $('#tie').text(winsArray[2])
 }
 
-const onNewGame = function () {
+const onNewGame = function() {
   $('.messages').text('Play again!')
   for (let i = 0; i < 9; i++) {
     gameArray[i] = ''
@@ -176,6 +183,12 @@ const newGameSuccess = (response) => {
   store.game = response.game
   onNewGame()
   $('.game_section').css('display', 'block')
+  $('.board_square').mouseover(function () {
+    $(this).css('background-color', '#821516')
+  })
+  $('.board_square').mouseout(function () {
+    $(this).css('background-color', 'crimson')
+  })
 }
 
 const newGameFailure = () => {
