@@ -19,28 +19,28 @@
 <div class='instruction-box'> You must sign up and sign in before you can play! </div>
 </header>
 <div class="row">
-  <form id="sign-up" class="col-sm-6 col-xs-12">
+  <form id="sign-up" class="clear-input col-sm-6 col-xs-12">
     <fieldset>
       <legend>Sign up!</legend>
       <input type="text" name="credentials[email]" placeholder="username"><br>
       <input type="password" name="credentials[password]" placeholder="password"><br>
-      <input type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
+      <input class="clear-input" type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
       <input type="submit" name="submit" value="Sign up!">
     </fieldset>
   </form>
 
-  <form id="sign-in" class="col-sm-6 col-xs-12">
+  <form id="sign-in" class="clear-input col-sm-6 col-xs-12">
     <fieldset>
       <legend>Sign in!</legend>
-      <input type="text" name="credentials[email]" placeholder="username">
-      <input type="password" name="credentials[password]" placeholder="password">
+      <input class="clear-input" type="text" name="credentials[email]" placeholder="username">
+      <input class="clear-input" type="password" name="credentials[password]" placeholder="password">
       <input type="submit" name="submit" value="Sign in!">
     </fieldset>
   </form>
 </div>
 
 <div class="row">
-  <form id="change-password" class="change-password col-sm-4 col-xs-12">
+  <form id="change-password" class="clear-input change-password col-sm-4 col-xs-12">
     <fieldset>
       <legend>Change Password</legend>
       <input type="password" name="passwords[old]" placeholder="old password">
@@ -106,7 +106,7 @@ Let's Play!
 <div id="display-all-games" class="display-all-games">
 </div>
 
-<form id="get-one-game" class="get-one-game">
+<form id="get-one-game" class="clear-input get-one-game">
   <fieldset>
     <legend>Get One Game</legend>
     <input type="submit" name="submit" value="Get One Game">

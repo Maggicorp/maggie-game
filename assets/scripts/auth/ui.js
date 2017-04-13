@@ -6,6 +6,7 @@ const winsArray = require('../board/events.js')
 
 const signUpSuccess = (data) => {
   $('.instruction-box').text('Great Job! Now sign in!')
+  $('#sign-up').css('display', 'none')
 }
 
 const signUpFailure = () => {
@@ -25,7 +26,6 @@ const signInSuccess = (response) => {
   $('.get-all-games').css('display', 'block')
   $('.get-one-game').css('display', 'block')
   $('#sign-in').css('display', 'none')
-  $('#sign-up').css('display', 'none')
 }
 
 const signInFailure = () => {
@@ -57,6 +57,7 @@ const signOutSuccess = () => {
   for (let i = 0; i < winsArray.length; i++) {
     winsArray[i] = ''
   }
+  $('.clear-input').trigger('reset')
 }
 
 const signOutFailure = () => {
