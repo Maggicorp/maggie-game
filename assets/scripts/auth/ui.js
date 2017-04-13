@@ -26,6 +26,7 @@ const signInSuccess = (response) => {
   $('.get-all-games').css('display', 'block')
   $('.get-one-game').css('display', 'block')
   $('#sign-in').css('display', 'none')
+  $('#sign-up').css('display', 'none')
 }
 
 const signInFailure = () => {

@@ -13,6 +13,7 @@ const winsArray = [0, 0, 0]
 let gameOver = false
 
 const stopGame = function () {
+  $('.board_square').css('background-color', 'blue')
   gameOver = true
 }
 
@@ -161,6 +162,7 @@ const onNewGame = function () {
   clearBoard()
   gameOver = false
   turn[0] = 1
+  $('.board_square').css('background-color', 'crimson')
 }
 
 const addBoardHandlers = () => {
