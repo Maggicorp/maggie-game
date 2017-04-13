@@ -6,8 +6,7 @@ const updateGameSuccess = (response) => {
   store.game = response.game
 }
 
-const updateGameFailure = () => {
-}
+const updateGameFailure = () => {}
 
 const printGames = (data) => {
   const newArray = []
@@ -29,11 +28,68 @@ const getGameFailure = () => {
 }
 
 const oneGameSuccess = (response) => {
-  $('#display-one-game').text(response.game.id)
+  $('#display-one-game').text('This game was completed is ' + response.game.over + '.\r\n The game moves looked like ' + response.game.cells + ' The outcome of the game was ' + gameOutcome(response))
 }
 
 const oneGameFailure = () => {
   $('#display-one-game').text('Error, make sure to enter a valid game id')
+}
+
+const gameOutcome = function (data) {
+  const arr = data.game.cells
+  if (data.game.over === false) {
+    return 'inconclusive.  Finish your game next time. '
+  } else {
+    if (arr[0] === arr[1] && arr[0] === arr[2] && arr[0] !== '') {
+      if (arr[0] === 'x') {
+        return 'x won'
+      } else if (arr[0] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[3] === arr[4] && arr[3] === arr[5] && arr[3] !== '') {
+      if (arr[3] === 'x') {
+        return 'x won'
+      } else if (arr[3] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[6] === arr[7] && arr[6] === arr[8] && arr[8] !== '') {
+      if (arr[6] === 'x') {
+        return 'x won'
+      } else if (arr[6] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[0] === arr[3] && arr[0] === arr[6] && arr[6] !== '') {
+      if (arr[0] === 'x') {
+        return 'x won'
+      } else if (arr[0] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[1] === arr[4] && arr[1] === arr[7] && arr[7] !== '') {
+      if (arr[1] === 'x') {
+        return 'x won'
+      } else if (arr[1] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[2] === arr[5] && arr[2] === arr[8] && arr[8] !== '') {
+      if (arr[2] === 'x') {
+        return 'x won'
+      } else if (arr[2] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[0] === arr[4] && arr[0] === arr[8] && arr[8] !== '') {
+      if (arr[0] === 'x') {
+        return 'x won'
+      } else if (arr[0] === 'o') {
+        return 'o won'
+      }
+    } else if (arr[2] === arr[4] && arr[2] === arr[6] && arr[6] !== '') {
+      if (arr[2] === 'x') {} else if (arr[2] === 'o') {
+        return 'o won'
+      } else {
+        return 'It is a tie!'
+      }
+    }
+  }
 }
 
 module.exports = {
