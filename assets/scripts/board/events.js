@@ -8,13 +8,11 @@ const isFree = (idNum, arr) => {
   }
 }
 
-// need a way to restart it on sign out
 const winsArray = [0, 0, 0]
 
 let gameOver = false
 
 const stopGame = function () {
-  console.log('Game is over')
   gameOver = true
 }
 
@@ -98,7 +96,6 @@ const whoWon = function (arr) {
     return
   } else {
     $('.messages').text('Play on')
-    console.log(turn, 'turn')
     return
   }
 }
@@ -107,14 +104,12 @@ const api = require('../gameAPI/api.js')
 const ui = require('../gameAPI/ui.js')
 
 const updateGame = function (index, value, gameOver) {
-  console.log('updateGame function')
   api.updateGame(index, value, gameOver)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
 }
 
 const turn = [1]
-// playX includes logging to create event
 
 const playX = function (ind, arr, obj) {
   arr[ind] = 'x'
@@ -134,31 +129,24 @@ const gameArray = ['', '', '', '', '', '', '', '', '']
 
 const onBoardClick = function (event) {
   event.preventDefault()
-  console.log('click')
   const box = event.target
   const idNum = $(box).attr('data-id')
-  console.log(idNum)
   const freeSpot = (isFree(idNum, gameArray))
   let val = ''
   if (!freeSpot || gameOver) {
-    console.log('spot taken or game is over')
     return false
   } else {
-    console.log('spot vacant')
     if (turn[0] % 2 === 1) {
-      console.log('x turn')
       val = 'x'
       turn[0]++
       playX(idNum, gameArray, box)
     } else if (turn[0] % 2 === 0) {
-      console.log('o turn')
       val = 'o'
       turn[0]++
       playO(idNum, gameArray, box)
     }
   }
   whoWon(gameArray)
-  console.log('win array', winsArray)
   updateGame(idNum, val, gameOver)
   $('#x-wins').text(winsArray[0])
   $('#o-wins').text(winsArray[1])
@@ -177,21 +165,18 @@ const onNewGame = function () {
 
 const addBoardHandlers = () => {
   $('.board_square').on('click', onBoardClick)
-//  $('.new_game').on('click', onNewGame)
 }
 
 const store = require('../store.js')
 
 const newGameSuccess = (response) => {
-  console.log(response)
   $('.instruction-box').text('You did it! Now you can play!')
   store.game = response.game
   onNewGame()
   $('.game_section').css('display', 'block')
 }
 
-const newGameFailure = (error) => {
-  console.error(error)
+const newGameFailure = () => {
   $('.instruction-box').text('Something went wrong, try again')
 }
 

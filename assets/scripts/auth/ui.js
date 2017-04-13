@@ -5,17 +5,14 @@ const store = require('../store.js')
 const winsArray = require('../board/events.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
   $('.instruction-box').text('Great Job! Now sign in!')
 }
 
-const signUpFailure = (error) => {
-  console.error(error)
+const signUpFailure = () => {
   $('.instruction-box').text('Something went wrong, try again')
 }
 
 const signInSuccess = (response) => {
-  console.log(response)
   $('.instruction-box').text('You did it! Now you can play! You must click create game to start a new game. ')
   store.user = response.user
   $('#display-all-games').text('')
@@ -31,19 +28,15 @@ const signInSuccess = (response) => {
   $('#sign-up').css('display', 'none')
 }
 
-const signInFailure = (error) => {
-  console.error(error)
+const signInFailure = () => {
   $('.instruction-box').text('Something went wrong, try again')
 }
 
 const changePasswordSuccess = (response) => {
-  console.log(response)
   $('.instruction-box').text('password successfully changed')
 }
 
-const changePasswordFailure = (error) => {
-  console.log(error)
-  console.log('It was an error')
+const changePasswordFailure = () => {
   $('.instruction-box').text('Something went wrong, try again')
 }
 
@@ -66,8 +59,7 @@ const signOutSuccess = () => {
   }
 }
 
-const signOutFailure = (error) => {
-  console.error(error)
+const signOutFailure = () => {
   $('.instruction-box').text('Something went wrong, try again')
 }
 
