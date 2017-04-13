@@ -94,14 +94,11 @@ const gameOutcome = function (data) {
 }
 
 const didXwin = function (data) {
-  console.log(data.games)
-  console.log(data.games[0].cells)
-  const result = ['0']
+  const result = ['0', '7']
   for (let i = 0; i < data.games.length; i++) {
     const arr = data.games[i].cells
-    console.log(arr)
     if (data.games[i].over === false) {
-      console.log(false)
+      result[1]++
     } else if (arr[0] === arr[1] && arr[0] === arr[2] && arr[0] !== '') {
       if (arr[0] === 'x') {
         result[0]++
