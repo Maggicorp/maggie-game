@@ -85,9 +85,9 @@ const gameOutcome = function (data) {
     } else if (arr[2] === arr[4] && arr[2] === arr[6] && arr[6] !== '') {
       if (arr[2] === 'x') {} else if (arr[2] === 'o') {
         return 'o won'
-      } else {
-        return 'It is a tie!'
       }
+    } else {
+      return 'It is a tie!'
     }
   }
 }
