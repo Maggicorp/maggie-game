@@ -40,3 +40,9 @@ header {
 .create-game {
   display: none;
 }
+
+@media (max-width: 400px) {
+  header {
+    width: 80%;
+ }
+}

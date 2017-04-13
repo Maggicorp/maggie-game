@@ -40,8 +40,6 @@ footer {
   margin: 0 auto
 }
 
-
-
 .score_board {
   margin: 20px;
   font-size: 16px;
@@ -64,3 +62,16 @@ footer {
 
 .board_square:hover {
 	background-color: #821516}
+
+  @media (max-width: 400px) {
+    .board_square {
+      width: 60px;
+      height: 60px;
+      font-size: 40px;
+    }
+    .board_section {
+      width: 180px;
+      height: 180px;
+    }
+
+  }
