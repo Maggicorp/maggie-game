@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+<div class="container">
+<header>  <h1>Tic Tac Toebot </h1>
+<div class='instruction-box'> You must sign up and sign in before you can play! </div>
+</header>
+<div class="row">
+  <form id="sign-up" class="clear-input col-sm-6 col-xs-12">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <input type="text" name="credentials[email]" placeholder="username"><br>
+      <input type="password" name="credentials[password]" placeholder="password"><br>
+      <input class="clear-input" type="password" name="credentials[password_confirmation]" placeholder="password_confirmation"><br>
+      <input class="push" type="submit" name="submit" value="Sign up!">
+    </fieldset>
+  </form>
+
+  <form id="sign-in" class="clear-input col-sm-6 col-xs-12">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input class="clear-input" type="text" name="credentials[email]" placeholder="username">
+      <input class="clear-input" type="password" name="credentials[password]" placeholder="password">
+      <input class="push" type="submit" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
+</div>
+
+<div class="row">
+  <form id="change-password" class="clear-input change-password col-sm-4 col-xs-12">
+    <fieldset>
+      <legend>Change Password</legend>
+      <input type="password" name="passwords[old]" placeholder="old password">
+      <input type="password" name="passwords[new]" placeholder="new password">
+      <input class="push" type="submit" name="submit" value="Change password!">
+    </fieldset>
+  </form>
+
+  <form id="sign-out" class="sign-out col-sm-4 col-xs-12">
+    <fieldset>
+      <legend>Sign Out</legend>
+      <input class="push" type="submit" name="submit" value="Sign out!">
+    </fieldset>
+  </form>
+
+<form id="create-game" class="create-game col-sm-4 col-xs-12">
+  <fieldset>
+    <legend>Create Game</legend>
+    <input class="push" type="submit" name="submit" value="Create a new game!!!">
+  </fieldset>
+</form>
+</div>
+
+
+
+
+<div class="game_section">
+<br>
+<div class='messages'>
+Let's Play!
+</div>
+
+<div class="score_board">
+  <p>X wins:<span id="x-wins"> 0 </span></p>
+  <p>O wins:<span id="o-wins"> 0 </span></p>
+  <p>Ties:<span id="tie"> 0 </span></p>
+</div>
+
+  <div class="board_section ">
+
+		<div class="game_board">
+
+			<div class="board_square" data-id='0'> </div>
+			<div class='board_square' data-id='1'> </div>
+			<div class='board_square' data-id='2'> </div>
+			<div class='board_square' data-id='3'> </div>
+			<div class='board_square' data-id='4'> </div>
+			<div class='board_square' data-id='5'> </div>
+			<div class='board_square' data-id='6'> </div>
+			<div class='board_square' data-id='7'> </div>
+			<div class='board_square' data-id='8'> </div>
+		</div>
+</div>
+</div>
+
+<form id="get-all-games" class="get-all-games">
+  <fieldset>
+    <legend>Get Statistics For All Games</legend>
+    <input class="push" type="submit" name="submit" value="Get statistics all games!">
+  </fieldset>
+</form>
+
+<div id="display-all-games" class="display-all-games">
+</div>
+
+<form id="get-one-game" class="clear-input get-one-game">
+  <fieldset>
+    <legend>Get Information About One Game</legend>
+    <input class="push" type="submit" name="submit" value="Get One Game's Information">
+    <input type="text" name="game[id]" placeholder="game id">
+  </fieldset>
+</form>
+
+<div id="display-one-game" class="display-one-game">
+</div>
+<footer class="col-xs-12"><p>MaggiCorp &copy; 2017</p></footer>
+</div>
+</body>
+
+</html>
