@@ -73,17 +73,32 @@ I also wrote some psuedocode of game logic which was helpful.  Here is my psuedo
     Button starts new game on click has a function that does gameArray.map(change strings to empty)
 
 I also wrote these user stories:
+
     1. As a user, I want to play tic tac toe
+
     2. As a user, I want to keep track of my score, and the person I am playing against's score
+
     3. As a user, I want the sign in process to be quick and easy.
+
     4. As a user, I want to be able to sign out quickly.
+
     5. As a user, I want to be able to restart a game if I want to.
+
     6. As a user, I want to be able to switch windows without losing my game progress.
+
     7. As a user, I want the tic tac toe game to look fun.
+
     8. As a user, I want the game to load quickly.
 
+Difficulties:
+
+Difficulties I faced were mostly around using the gameAPI.  I spent a lot of time trying to make the patch/ update game function work and trying to fully understand the different moving parts.
+
+I keep most of my functions in the board/events.js file because I was afraid that variables would be out of scope. For the next project I would definitely use more export and import statements so that I could have cleaner code.
 
 
-Difficulties I faced were trying mostly around using the gameAPI.  I spent a lot of time trying to make the patch/ update game function work and trying to fully understand the different moving parts.  I also got confused because I didn't move lots of the functions into different folders because I was afraid that variables would be out of scope. For the next project I would definitely start using more export and import statements to start so that I could have cleaner code.  I also had some difficulty making my game mobile responsive and I wish I had designed it mobile first or using more bootstrap so I didn't have to go through and add a bunch of media queries at the end.
+I also had some difficulty making my game mobile responsive and I wish I had designed it mobile first or using more bootstrap so I didn't have to go through and add a bunch of media queries at the end. To get the hover psuedo class to work I had to make a JQuery mouseover and mouseout function because a different event overrode the css.
 
-If I had more time I would try to make it possible for user O to sign in, and I would make it possible to reload games on the game board, not just display their relevent statistics.
+More Time:
+
+If I had more time I would try to make it possible for user O to sign in. I would also make it possible to reload an incomplete games on the game board, not just display their relevent statistics.  
